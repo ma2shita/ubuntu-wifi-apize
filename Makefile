@@ -15,6 +15,10 @@ on:
 	sysctl -w net.ipv4.conf.all.forwarding=1
 	echo "Ok, you can run > make start"
 
+.PHONY: start
+start:
+	supervisord -c ./supervisord.conf
+
 .PHONY: off
 off:
 	-supervisorctl shutdown

@@ -7,6 +7,7 @@ on:
 	-killall dnsmasq
 	iptables -t nat -F
 	iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+	iptables -t nat -A POSTROUTING -o usb0 -j MASQUERADE
 	cp *_systemd.network /etc/systemd/network/
 	systemctl restart systemd-networkd
 	(cd /etc ; rm resolv.conf ; ln -sf ../run/systemd/resolve/resolv.conf resolv.conf)

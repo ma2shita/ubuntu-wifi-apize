@@ -1,5 +1,6 @@
 .PHONY: all
 all:
+	supervisord -c ./supervisord.conf
 
 .PHONY: on
 on:
@@ -14,10 +15,6 @@ on:
 	sysctl -w net.ipv4.conf.all.forwarding=0
 	sysctl -w net.ipv4.conf.all.forwarding=1
 	echo "Ok, you can run > make start"
-
-.PHONY: start
-start:
-	supervisord -c ./supervisord.conf
 
 .PHONY: off
 off:

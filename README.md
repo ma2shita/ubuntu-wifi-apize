@@ -6,8 +6,10 @@ Using hostapd(Wi-Fi Authenticator), dnsmasq(DHCPd, DNSd) and Supervisord(Process
 Operation;
 ----------
 
-- `sudo make on`
-- `sudo make off`
+- `sudo make on`  : Switch to Wi-Fi AP and router mode
+- `sudo make off` : Switch to Managed by NetworkManager mode
+
+- `sudo make` : Starting hostapd and dnsmasq by supervisord
 
 Install Libraries;
 ------------------
